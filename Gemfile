@@ -41,6 +41,9 @@ gem "bootstrap_form", ">= 4.1.0"
 # Use Cocoon for dynamic nested forms
 gem "cocoon"
 
+# Use awesome_print for formatted print in rails console
+gem 'awesome_print'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
