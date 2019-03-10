@@ -8,8 +8,8 @@
 The setups steps expect following tools installed on the system.
 
 - Github
-- Ruby [2.4.1](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
-- Rails [5.2.2](https://github.com/organization/project-name/blob/master/Gemfile#L12)
+- Ruby 2.4.1
+- Rails 5.2.2
 
 ##### 1. Clone the repository
 
@@ -20,6 +20,7 @@ git clone git@github.com:martink-io/qp.git
 ##### 2. Database
 
 Default sqlite3 used
+
 Pin sqlite3 to v1.3.13 due to sqlite3_adapter conflict with the new version of sqlite3 gem
 
 ```bash
