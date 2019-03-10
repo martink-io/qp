@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quotation_id: 1
+  type: 
+  start_date: 2019-03-10
+  end_date: 2019-03-10
+  recurring_on: 1
+  start_time: 2019-03-10 19:50:05
+  end_time: 2019-03-10 19:50:05
+  qty: 1
+  cost: 1.5
+  product: one
+
+two:
+  quotation_id: 1
+  type: 
+  start_date: 2019-03-10
+  end_date: 2019-03-10
+  recurring_on: 1
+  start_time: 2019-03-10 19:50:05
+  end_time: 2019-03-10 19:50:05
+  qty: 1
+  cost: 1.5
+  product: two
