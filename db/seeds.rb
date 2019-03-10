@@ -10,9 +10,12 @@ Product.create(name: "RoR course", unit: 'day', unit_price: 12.50, type: "Subscr
 Product.create(name: "DevOps course", unit: 'day', unit_price: 10.00, type: "Subscription")
 Product.create(name: "ReactJS course", unit: 'day', unit_price: 8.00, type: "Subscription")
 
-Product.create(name: "RoR tricks", unit: 'hour', unit_price: 2.50, type: "Service")
+Product.create(name: "RoR tricks", unit: 'hour', unit_price: 2.50, type: "Service",
+  recurring_on: 2, length: '3')
 Product.create(name: "DevOps for AWS", unit: 'hour', unit_price: 5.99, type: "Service")
+  recurring_on: 3, length: '2')
 Product.create(name: "Redux approach", unit: 'hour', unit_price: 4.75, type: "Service")
+  recurring_on: 5, length: '4')
 
 Product.create(name: "RoR by MIT", unit_price: 8.99, type: "Good")
 Product.create(name: "ReactJS by MIT", unit_price: 5.99, type: "Good")
