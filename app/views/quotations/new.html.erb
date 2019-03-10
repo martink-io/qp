@@ -1,2 +1,53 @@
-<h1>Quotations#new</h1>
-<p>Find me in app/views/quotations/new.html.erb</p>
+<div class="container">
+  <h2>Select products</h2>
+  <%= bootstrap_form_for(@quotation) do |form| %>
+    <%= form.hidden_field :user_id, value: @user.id %>
+    <hr>
+    <%= form.fields_for :user_product_subscription do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.select :product_id, @subscriptions.collect {|p| [p.name, p.id]},
+              label: "Subscriptions", include_blank: '-select subscription-' %>
+        </div>
+        <div class="col-md-4">
+          <%= f.date_select :start_date %>
+        </div>
+        <div class="col-md-4">
+          <%= f.date_select :end_date %>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+    <%= form.fields_for :user_product_service do |f| %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= f.select :product_id, @services.collect {|p| [p.name, p.id]}, 
+              label: "Service", include_blank: '-select service-' %>
+        </div>
+        <div class="col-md-3">
+          <%= f.number_field :qty, label: "Number of Weeks" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.time_select :start_time %>
+        </div>
+        <div class="col-md-3">
+          <%= f.time_select :end_time %>    
+        </div>
+      </div>
+    <% end %>
+    <hr>
+    <%= form.fields_for :user_product_good do |f| %>
+        <div class="row">
+          <div class="col-md-3">
+            <%= f.select :product_id, @goods.collect {|p| [p.name, p.id]}, 
+                label: "Goods", include_blank: '-select goods-' %>
+          </div>
+          <div class="col-md-3">
+            <%= f.number_field :qty, label: "Number of Goods" %>    
+          </div>
+        </div>
+    <% end %>
+    <hr>
+    <%= form.submit "Next" %>
+  <% end %>
+</div>
