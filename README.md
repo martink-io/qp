@@ -1,25 +1,47 @@
-# README
+# 3-Steps Quotation Process
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Time of completion: ~4 hours
 
-Things you may want to cover:
 
-* Ruby version
+##### Prerequisites
 
-* System dependencies
+The setups steps expect following tools installed on the system.
 
-* Configuration
+- Github
+- Ruby [2.4.1](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
+- Rails [5.2.2](https://github.com/organization/project-name/blob/master/Gemfile#L12)
 
-* Database creation
+##### 1. Clone the repository
 
-* Database initialization
+```bash
+git clone git@github.com:martink-io/qp.git
+```
 
-* How to run the test suite
+##### 2. Database
 
-* Services (job queues, cache servers, search engines, etc.)
+Default sqlite3 used
+Pin sqlite3 to v1.3.13 due to sqlite3_adapter conflict with the new version of sqlite3 gem
 
-* Deployment instructions
+```bash
+gem 'sqlite3', '~> 1.3.13'
+```
 
-* ...
-# qp
+##### 3. Create,setup and seed the database
+
+Run the following commands:
+
+```ruby
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
+
+##### 4. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+bundle exec rails s
+```
+
+Access the site with the URL http://localhost:3000
