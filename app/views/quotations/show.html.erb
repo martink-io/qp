@@ -98,6 +98,6 @@
     </table>
     <hr>
 
-    <h2>Total Cost: £<%= @quotation.user_products.sum(:cost) %></h2>
+    <h2>Total Cost: £<%= (@quotation.user_products.sum(:cost)).round(2) %></h2>
   </div>
 </div>
