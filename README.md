@@ -5,7 +5,7 @@
 
 ##### Prerequisites
 
-The setups steps expect following tools installed on the system.
+The setup steps expect following tools installed on the system.
 
 - Github
 - Ruby 2.4.1
