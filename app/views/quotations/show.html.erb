@@ -1,5 +1,28 @@
 <div class="container">
   <div class="col-md-12">
+    <h1>Quotation: #<%= @quotation.u_id %></h1>
+    <hr>
+    <h2>User Details:</h2>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><%= @quotation.user.name %></td>
+          <td><%= @quotation.user.email %></td>
+          <td><%= @quotation.user.phone %></td>
+        </tr>
+        </tbody>
+      </table>
+    <hr>
+
+    <h2>Products:</h2>
+    <hr>
     <p>Subscription</p>
     <table class="table table-bordered">
       <thead>
@@ -7,6 +30,10 @@
         <th>Name</th>
         <th>Start Date</th>
         <th>End Date</th>
+        <th>Cost per <%= @quotation.user_product_subscription&.product.unit %></th>
+        <th>
+          <%= @quotation.user_product_subscription&.product.unit %>
+        </th>
         <th>Total Cost</th>
       </tr>
       </thead>
@@ -15,7 +42,9 @@
         <td><%= @quotation.user_product_subscription.product.name %></td>
         <td><%= @quotation.user_product_subscription&.start_date %></td>
         <td><%= @quotation.user_product_subscription&.end_date %></td>
-        <td><%= @quotation.user_product_subscription&.cost %></td>
+        <td>£<%= @quotation.user_product_subscription&.product.unit_price %></td>
+        <td><%= @quotation.user_product_subscription&.qty %></td>
+        <td>£<%= @quotation.user_product_subscription&.cost %></td>
       </tr>
       </tbody>
     </table>
@@ -27,6 +56,12 @@
         <th>Name</th>
         <th>Start Time</th>
         <th>End Time</th>
+        <th>
+          Cost per <%= @quotation.user_product_service&.product.unit %>
+        </th>
+        <th>
+          <%= @quotation.user_product_service&.product.unit %>
+        </th>
         <th>Total Cost</th>
       </tr>
       </thead>
@@ -35,7 +70,9 @@
         <td><%= @quotation.user_product_service.product.name %></td>
         <td><%= @quotation.user_product_service&.start_time&.strftime("%I:%M %P") %></td>
         <td><%= @quotation.user_product_service&.end_time&.strftime("%I:%M %P") %></td>
-        <td><%= @quotation.user_product_service&.cost %></td>
+        <td>£<%= @quotation.user_product_service&.product.unit_price %></td>
+        <td><%= @quotation.user_product_service&.qty %></td>
+        <td>£<%= @quotation.user_product_service&.cost %></td>
       </tr>
       </tbody>
     </table>
@@ -45,6 +82,7 @@
       <thead>
       <tr>
         <th>Name</th>
+        <th>Price</th>
         <th>Qty</th>
         <th>Cost</th>
       </tr>
@@ -52,13 +90,14 @@
       <tbody>
       <tr>
         <td><%= @quotation.user_product_good.product.name %></td>
+        <td>£<%= @quotation.user_product_good&.product.unit_price %></td>
         <td><%= @quotation.user_product_good&.qty %></td>
-        <td><%= @quotation.user_product_good&.cost %></td>
+        <td>£<%= @quotation.user_product_good&.cost %></td>
       </tr>
       </tbody>
     </table>
     <hr>
 
-    <h2> Quotation Total Cost: <%= @quotation.user_products.sum(:cost) %></h2>
+    <h2>Total Cost: £<%= @quotation.user_products.sum(:cost) %></h2>
   </div>
 </div>

@@ -1,8 +1,12 @@
 class UserProductService < UserProduct
+  before_save :set_qty
   before_save :calculate_cost
 
+  def set_qty
+    self.qty = (end_time - start_time) / 3600
+  end
+
   def calculate_cost
-    total_hours = (end_time - start_time) / 3600
-    self.cost = total_hours * qty * product.unit_price
+    self.cost = qty * product.unit_price
   end
 end
