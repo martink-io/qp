@@ -20,14 +20,14 @@
     <hr>
     <%= form.fields_for :user_product_service do |f| %>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <%= f.select :product_id, @services.collect {|p| [p.name, p.id]}, 
               label: "Service", include_blank: '-select service-' %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <%= f.number_field :qty, label: "Number of Weeks" %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <%= f.select :recurring_on, Date::DAYNAMES.each {|day| [day]},
               label: "Recurring on", include_blank: '-select day-' %>
         </div>
