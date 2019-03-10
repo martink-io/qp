@@ -44,6 +44,9 @@ gem 'cocoon'
 # Use awesome_print for formatted print in rails console
 gem 'awesome_print'
 
+# Use validate_timeliness for time validations
+gem 'validates_timeliness', '~> 5.0.0.alpha3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
