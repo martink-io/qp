@@ -31,9 +31,7 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Cost per <%= @quotation.user_product_subscription&.product.unit %></th>
-        <th>
-          <%= @quotation.user_product_subscription&.product.unit %>
-        </th>
+        <th>Days</th>
         <th>Total Cost</th>
       </tr>
       </thead>
@@ -59,9 +57,9 @@
         <th>
           Cost per <%= @quotation.user_product_service&.product.unit %>
         </th>
-        <th>
-          <%= @quotation.user_product_service&.product.unit %>
-        </th>
+        <th>Hours</th>
+        <th>Weeks</th>
+        <th>Recurring On</th>
         <th>Total Cost</th>
       </tr>
       </thead>
@@ -71,7 +69,9 @@
         <td><%= @quotation.user_product_service&.start_time&.strftime("%I:%M %P") %></td>
         <td><%= @quotation.user_product_service&.end_time&.strftime("%I:%M %P") %></td>
         <td>£<%= @quotation.user_product_service&.product.unit_price %></td>
+        <td><%= @quotation.user_product_service&.hours %></td>
         <td><%= @quotation.user_product_service&.qty %></td>
+        <td><%= @quotation.user_product_service&.recurring_on %></td>
         <td>£<%= @quotation.user_product_service&.cost %></td>
       </tr>
       </tbody>
