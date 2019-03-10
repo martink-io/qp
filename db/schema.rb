@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_222006) do
+ActiveRecord::Schema.define(version: 2019_03_10_223508) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_03_10_222006) do
     t.string "type"
     t.date "start_date"
     t.date "end_date"
-    t.integer "recurring_on"
+    t.string "recurring_on"
     t.time "start_time"
     t.time "end_time"
     t.integer "qty"

@@ -28,6 +28,10 @@
           <%= f.number_field :qty, label: "Number of Weeks" %>
         </div>
         <div class="col-md-3">
+          <%= f.select :recurring_on, Date::DAYNAMES.each {|day| [day]},
+              label: "Recurring on", include_blank: '-select day-' %>
+        </div>
+        <div class="col-md-3">
           <%= f.time_select :start_time %>
         </div>
         <div class="col-md-3">
