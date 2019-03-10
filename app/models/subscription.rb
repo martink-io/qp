@@ -1,0 +1,2 @@
+class Subscription < Product
+end
