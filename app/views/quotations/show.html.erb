@@ -1,2 +1,64 @@
-<h1>Quotations#show</h1>
-<p>Find me in app/views/quotations/show.html.erb</p>
+<div class="container">
+  <div class="col-md-12">
+    <p>Subscription</p>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Total Cost</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @quotation.user_product_subscription.product.name %></td>
+        <td><%= @quotation.user_product_subscription&.start_date %></td>
+        <td><%= @quotation.user_product_subscription&.end_date %></td>
+        <td><%= @quotation.user_product_subscription&.cost %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p>Service</p>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Total Cost</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @quotation.user_product_service.product.name %></td>
+        <td><%= @quotation.user_product_service&.start_time&.strftime("%I:%M %P") %></td>
+        <td><%= @quotation.user_product_service&.end_time&.strftime("%I:%M %P") %></td>
+        <td><%= @quotation.user_product_service&.cost %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p>Goods</p>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Qty</th>
+        <th>Cost</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @quotation.user_product_good.product.name %></td>
+        <td><%= @quotation.user_product_good&.qty %></td>
+        <td><%= @quotation.user_product_good&.cost %></td>
+      </tr>
+      </tbody>
+    </table>
+    <hr>
+
+    <h2> Quotation Total Cost: <%= @quotation.user_products.sum(:cost) %></h2>
+  </div>
+</div>
