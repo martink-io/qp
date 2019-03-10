@@ -1,0 +1,2 @@
+class UserProductService < UserProduct
+end

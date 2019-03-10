@@ -1,0 +1,2 @@
+class UserProductGood < UserProduct
+end
