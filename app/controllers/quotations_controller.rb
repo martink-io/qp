@@ -1,4 +1,6 @@
 class QuotationsController < ApplicationController
+  before_action :current_user, only: [:new, :create]
+  before_action :authrize_user, only: [:new]
   before_action :set_quotation, only: [:show]
   before_action :get_products, only: [:new, :create]
 
