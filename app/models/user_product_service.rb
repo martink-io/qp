@@ -20,6 +20,8 @@ class UserProductService < UserProduct
     hours = (end_time - start_time) / 3600
   end
 
+  private
+
   def calculate_cost
     self.cost = hours * qty * product.unit_price
   end

@@ -4,6 +4,8 @@ class UserProductSubscription < UserProduct
 
   validates_presence_of :start_date, :start_date
   validates_datetime :end_date, :after => :start_date
+
+  private
   
   def set_qty
     self.qty = (start_date.to_datetime..end_date.to_datetime).count {|date| (1..5).include?(date.wday) }

@@ -13,11 +13,9 @@ class Quotation < ApplicationRecord
   before_create :generate_u_id
   before_create :calculate_total_cost
 
-  validates_presence_of :u_id, :user_id, :total_cost
-  validates :total_cost, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, 
-    numericality: { greater_than: 0 }
+  validates_presence_of :user_id
 
-  protected
+  private
 
   def generate_u_id
     self.u_id = loop do
